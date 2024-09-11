@@ -20,8 +20,12 @@ int main(){
         else if(i == 1) operation = next;
         else if(i == 2) num2 = stoi(next);
         }
-        if(operation == ">>") cout << (num1 >> num2) << endl;
-        else cout << (num1 << num2) << endl;
+        switch(operation[0]){
+            case '>': cout << (num1 >> num2) << endl; break; 
+            case '<': cout << (num1 << num2) << endl; break; 
+            case '&': cout << (num1 & num2) << endl; break; 
+            case '|': cout << (num1 | num2) << endl; break; 
+        }
     }
     return 0;
 }
