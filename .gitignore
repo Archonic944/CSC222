@@ -1,4 +1,6 @@
 
+/.idea
 /.vscode
 *.out
 ./out
+/cmake-build-debug/
