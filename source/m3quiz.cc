@@ -23,9 +23,9 @@ namespace hello {
     int m = 6;
 }
 
-int main(void) {
+int main() {
     foon(2);
-    cout << "\n";
+    cout << "\n" << "";
     cout << hello::i << endl;
     cout << hello::m << endl;
     return 0;

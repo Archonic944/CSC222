@@ -18,9 +18,9 @@ int main(){
 
     
     int c[] = {25, 2, 3, 4, 5};
-    int* d = &c[0];
-    (*d)++;
-    cout << *d << endl;
+    int& d = c[0];
+    (d)++;
+    cout << d << endl;
 
     float hello=5, *hellop = &hello;
     do_shit(hellop);

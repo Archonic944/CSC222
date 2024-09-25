@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 
-int main(){
+//add params to main
+int main(int argc, char *argv[]) {
     int numbers[] = {1, 2, 3, 4, 5, 6, 7};
     int auxiliary;
     for(int i = 0; i < 3; i++) {

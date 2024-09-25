@@ -11,5 +11,5 @@ int main()
     cout << "the universe and everything is (of course) ";
     cout << num << "." << endl;
 
-    return 0; //wonder what happens if i return 42
+    return 0; //wonder what happens if I return 42
 }
