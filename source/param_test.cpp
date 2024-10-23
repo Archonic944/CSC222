@@ -25,7 +25,9 @@ void mutate_dog(DOG *d) {
     (*(p-1))++;
 }
 
+
 int main() {
+    
     DOG v = {4, 3};
     cout << "The dog is aging..." << endl;
     age_dog(&v);
