@@ -77,3 +77,34 @@ double median(const vector<int>& nums) {
         return sorted_nums[size / 2];
     }
 }
+
+vector<int> mode(const vector<int>& nums){
+    if(nums.empty()) return {};
+    struct pair {
+        int a;
+        int b;
+        pair(int a, int b) : a(a), b(b) {}
+    };
+    vector<pair> counts = {};
+    for(int num : nums){
+        for(pair p : counts){
+            if(p.a == num) p.b++;
+            else counts.push_back(pair(num, 1));
+        }
+    }
+    //find the ones with the most
+    vector<pair> most = {}; //pairs are <count, [index of pair in counts array]>
+    int highest = -1;
+    for(int i = 0; i<counts.size(); i++){
+        pair p = counts[i];
+        if(p.b >= highest){
+            highest = p.b;
+            most.push_back(pair(p.b, i));
+        }
+    }
+    vector<int> final = {};
+    for(pair p : most){
+        if(p.b == highest) final.push_back(counts[p.a].a);
+    }
+    return final;
+}

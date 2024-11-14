@@ -83,3 +83,11 @@ TEST_CASE("Testing median function") {
     CHECK(median(nums2) == doctest::Approx(expected2));
 }
 
+TEST_CASE("Testing mode function"){
+    vector<int> nums = {1,1,1,2,2,2,2,3,3,3};
+    vector<int> nums2 = {1,1,2,2,3,3};
+    vector<int> ex  = {2};
+    vector<int> ex2 = {1,2,3};
+    CHECK(ex == mode(nums));
+    CHECK(mode(nums2) == ex);
+}
