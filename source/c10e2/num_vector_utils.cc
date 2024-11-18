@@ -53,7 +53,6 @@ vector<int> nums_between(const vector<int>& vec, int low, int high){
             vec2.push_back(num);
         }
     }
-    cout << render_num_vector(vec2) << endl;
     return vec2;
 }
 
@@ -87,10 +86,15 @@ vector<int> mode(const vector<int>& nums){
     };
     vector<pair> counts = {};
     for(int num : nums){
+        bool found = false;
         for(pair p : counts){
-            if(p.a == num) p.b++;
-            else counts.push_back(pair(num, 1));
+            if(p.a == num){
+                p.b++;
+                found = true;
+                break;
+            }
         }
+        if(!found) counts.push_back(pair(num, 1));
     }
     //find the ones with the most
     vector<pair> most = {}; //pairs are <count, [index of pair in counts array]>
