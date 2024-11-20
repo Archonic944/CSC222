@@ -6,6 +6,14 @@ Time::Time(int h, int m, double s) {
     hour = h;
     minute = m;
     second = s;
+    cout << "Double constructor called" << endl;
+}
+
+Time::Time(int h, int m, int s){
+    hour = h;
+    minute = m;
+    second = s;
+    cout << "Int constructor called" << endl;
 }
 
 Time::Time(double secs) {

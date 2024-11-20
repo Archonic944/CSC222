@@ -18,6 +18,7 @@ struct Time {
     bool after(const Time& t2) const;
     Time add(const Time& t2) const;
     double convert_to_seconds() const;
+    Time(int h, int m, int s);
 };
 
 #endif
