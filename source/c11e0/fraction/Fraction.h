@@ -5,7 +5,9 @@ struct Fraction {
     Fraction(int n, int d);
     Fraction();
 
-    void print();
+    //NOTE: I decided to implement to_string instead of print because it's easier to test
+    std::string to_string();
+
     Fraction plus(Fraction f);
     Fraction minus(Fraction f);
     Fraction times(Fraction f);
