@@ -4,7 +4,7 @@
 using namespace std;
 
 string Fraction::to_string() {
-    return "";
+    return std::to_string(num) + "/" + std::to_string(den);
 }
 
 Fraction::Fraction(int n, int d) {
