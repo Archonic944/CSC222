@@ -9,25 +9,19 @@ string Fraction::to_string() {
 }
 
 bool Fraction::equals(Fraction f){
-    Fraction f1 = this->reduce();
-    Fraction f2 = f.reduce();
-    return f1.num == f2.num && f1.den == f2.den;
-}
-
-Fraction Fraction::reduce() {
-    int gcd = std::gcd(num, den);
-    return Fraction(num / gcd, den / gcd);
+    return f.num == this->num && f.den == this->den;
 }
 
 Fraction Fraction::plus(Fraction f) {
     int n = this->num * f.den + f.num * this->den;
     int d = f.den * this->den;
-    return Fraction(n, d).reduce();
+    return Fraction(n, d);
 }
 
 Fraction::Fraction(int n, int d) {
-    num = n;
-    den = d;
+    int gcd = std::gcd(n, d);
+    num = n/gcd;
+    den = d/gcd;
 }
 
 Fraction::Fraction() {
@@ -38,11 +32,17 @@ Fraction::Fraction() {
 Fraction Fraction::minus(Fraction f){
     int den = f.den * this->den;
     int num = this->num * f.den - f.num * this->den;
-    return Fraction(num,den).reduce();
+    return Fraction(num,den);
 }
 
 Fraction Fraction::times(Fraction f){
     int num = this->num * f.num;
     int den = this->den * f.den;
-    return Fraction(num, den).reduce();
+    return Fraction(num, den);
+}
+
+Fraction Fraction::divided_by(Fraction f){
+    int num = f.den * this->num;
+    int den = f.num * this->den;
+    return Fraction(num, den);
 }
