@@ -13,7 +13,7 @@ Point::Point(double x, double y){
 }
 
 string Point::to_string(){
-    return "()";
+    return "(" + std::to_string(x) + ", " + std::to_string(y) + ")";
 }
 
 Point Point::operator+(Point& p){
