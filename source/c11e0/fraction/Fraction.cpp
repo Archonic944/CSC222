@@ -7,6 +7,14 @@ string Fraction::to_string() {
     return std::to_string(num) + "/" + std::to_string(den);
 }
 
+bool Fraction::equals(Fraction f){
+
+}
+
+Fraction Fraction::reduce(Fraction f) {
+    
+}
+
 Fraction Fraction::plus(Fraction f) {
     int n = this->num * f.den + f.num * this->den;
     int d = f.den * this->den;
@@ -24,5 +32,7 @@ Fraction::Fraction() {
 }
 
 Fraction Fraction::minus(Fraction f){
-    
+    int den = f.den * this->den;
+    int num = this->num * f.den - f.num * this->den;
+    return Fraction(num,den);
 }

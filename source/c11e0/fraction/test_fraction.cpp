@@ -22,5 +22,19 @@ TEST_CASE("Test minus"){
     Fraction f1(1,2);
     Fraction f2(1,6);
     Fraction f3 = f1.minus(f2);
-    CHECK(f3.to_string() == "2/6");
+    CHECK(f3.to_string() == "4/12");
+}
+
+TEST_CASE("Test reduce"){
+    Fraction f1(2, 4);
+    Fraction f2 = f1.reduce(f1);
+    CHECK(f2.to_string() == "1/2");
+}
+
+TEST_CASE("Test equals"){
+    Fraction f1(1, 2);
+    Fraction f2(2, 4);
+    CHECK(f1.equals(f2) == true);
+    Fraction f3(1, 3);
+    CHECK(f1.equals(f3) == false);
 }
