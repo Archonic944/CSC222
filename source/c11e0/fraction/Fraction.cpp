@@ -22,7 +22,7 @@ Fraction Fraction::reduce() {
 Fraction Fraction::plus(Fraction f) {
     int n = this->num * f.den + f.num * this->den;
     int d = f.den * this->den;
-    return Fraction(n, d);
+    return Fraction(n, d).reduce();
 }
 
 Fraction::Fraction(int n, int d) {
@@ -38,5 +38,5 @@ Fraction::Fraction() {
 Fraction Fraction::minus(Fraction f){
     int den = f.den * this->den;
     int num = this->num * f.den - f.num * this->den;
-    return Fraction(num,den);
+    return Fraction(num,den).reduce();
 }

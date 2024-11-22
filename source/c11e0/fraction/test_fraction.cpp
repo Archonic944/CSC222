@@ -15,14 +15,14 @@ TEST_CASE("Test add"){
     Fraction f1(1, 2);
     Fraction f2(1, 3);
     Fraction f3 = f1.plus(f2);
-    CHECK(f3.to_string() == "5/6");
+    CHECK(f3.equals(Fraction(5, 6)));
 }
 
 TEST_CASE("Test minus"){
     Fraction f1(1,2);
     Fraction f2(1,6);
     Fraction f3 = f1.minus(f2);
-    CHECK(f3.to_string() == "4/12");
+    CHECK(f3.equals(Fraction(1, 3)));
 }
 
 TEST_CASE("Test reduce"){
