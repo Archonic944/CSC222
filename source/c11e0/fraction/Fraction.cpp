@@ -8,7 +8,9 @@ string Fraction::to_string() {
 }
 
 Fraction Fraction::plus(Fraction f) {
-    
+    int n = this->num * f.den + f.num * this->den;
+    int d = f.den * this->den;
+    return Fraction(n, d);
 }
 
 Fraction::Fraction(int n, int d) {
