@@ -45,3 +45,10 @@ TEST_CASE("Test multiply"){
     Fraction f3 = f1.times(f2);
     CHECK(f3.equals(Fraction(1, 6)));
 }
+
+TEST_CASE("Test divided_by"){
+    Fraction f1(1, 4);
+    Fraction f2(2, 3);
+    Fraction f3 = f1.divided_by(f2);
+    CHECK(f3.equals(Fraction(3, 8)));
+}
