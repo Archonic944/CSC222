@@ -1,43 +1,44 @@
 #!/bin/bash
 
-# Check if at least one input file is provided
+# Check if the input is provided
 if [ $# -eq 0 ]; then
-    echo "Please provide one or more C++ files as arguments."
+    echo "Please provide a C++ file name or a directory as an argument."
     exit 1
 fi
 
-# Export CPATH
-export CPATH=/usr/local/lib/gcc/include
+# Check if the input is a file or a directory
+if [ -f "$1" ]; then
+    # Input is a file
+    # Extract the file name without the extension
+    filename=$(basename "$1")
+    filename="${filename%.*}"
 
-# Validate input files and prepare the file list for compilation
-cpp_files=""
-for file in "$@"; do
-    if [ -f "$file" ]; then
-        cpp_files="$cpp_files $file"
-    else
-        echo "Warning: '$file' is not a valid file. Skipping."
+    # Compile the C++ file
+    mkdir -p ./out
+    g++ -o "./out/$filename.out" "$1"
+
+    # Execute the compiled C++ file
+    "./out/$filename.out"
+
+elif [ -d "$1" ]; then
+    # Input is a directory
+    # Set CPATH environment variable
+    export CPATH=/usr/local/lib/gcc/include
+
+    # Find all .cc and .cpp files in the directory and compile them
+    cpp_files=$(find "$1" -type f \( -name "*.cc" -o -name "*.cpp" \))
+    if [ -z "$cpp_files" ]; then
+        echo "No .cc or .cpp files found in the directory."
+        exit 1
     fi
-done
 
-# Check if any valid files were found
-if [ -z "$cpp_files" ]; then
-    echo "No valid C++ files provided. Exiting."
-    exit 1
-fi
+    # Compile all .cc and .cpp files
+    mkdir -p ./out
+    g++ -o ./out/all_files_combined.out $cpp_files --std=c++11
 
-# Create output directory
-mkdir -p ./out
-
-# Compile the provided files
-output_file="./out/combined_files.out"
-g++ -o "$output_file" $cpp_files --std=c++11
-
-# Check if compilation succeeded
-if [ $? -eq 0 ]; then
-    echo "Compilation successful. Executing the binary..."
     # Execute the compiled binary
-    "$output_file"
+    ./out/all_files_combined.out
 else
-    echo "Compilation failed. Please check your code for errors."
+    echo "The provided argument is neither a file nor a directory."
     exit 1
 fi

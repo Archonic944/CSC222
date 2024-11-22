@@ -7,6 +7,10 @@ string Fraction::to_string() {
     return std::to_string(num) + "/" + std::to_string(den);
 }
 
+Fraction Fraction::plus(Fraction f) {
+    
+}
+
 Fraction::Fraction(int n, int d) {
     num = n;
     den = d;
