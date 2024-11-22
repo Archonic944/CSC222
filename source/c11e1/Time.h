@@ -13,5 +13,5 @@ struct Time {
     Time operator+(Time &t);
 };
 
-istream operator<<(istream& i, Time& t);
+ostream& operator<<(ostream& i, Time& t);
 #endif
