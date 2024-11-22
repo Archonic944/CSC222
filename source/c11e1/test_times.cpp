@@ -28,3 +28,4 @@ TEST_CASE("Test can add two Times with + operator") {
     Time t3 = t1 + t2;
     CHECK(t3.to_string() == "42:42:42");
 }
+

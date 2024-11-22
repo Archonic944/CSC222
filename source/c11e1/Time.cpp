@@ -33,3 +33,8 @@ string Time::to_string(){
     if(m_str.length() == 1) m_str = "0" + m_str;
     return std::to_string(h) + ":" + m_str + ":" + s_str;
 }
+
+ostream& operator<<(ostream& i, Time& t){
+    i << t.to_string();
+    return i;
+}
