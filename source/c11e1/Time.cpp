@@ -8,6 +8,14 @@ Time::Time(int ss){
     s = ss;
 }
 
+Time::Time(int h, int m, int s){
+
+}
+
+Time::Time(int h, int m){
+    
+}
+
 Time::Time(){
     s = 0;
 }
