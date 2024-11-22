@@ -38,3 +38,10 @@ TEST_CASE("Test equals"){
     Fraction f3(1, 3);
     CHECK(f1.equals(f3) == false);
 }
+
+TEST_CASE("Test multiply"){
+    Fraction f1(1, 4);
+    Fraction f2(2,3);
+    Fraction f3 = f1.times(f2);
+    CHECK(f3.equals(Fraction(1, 6)));
+}

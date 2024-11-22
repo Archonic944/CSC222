@@ -40,3 +40,7 @@ Fraction Fraction::minus(Fraction f){
     int num = this->num * f.den - f.num * this->den;
     return Fraction(num,den).reduce();
 }
+
+Fraction Fraction::times(Fraction f){
+
+}
