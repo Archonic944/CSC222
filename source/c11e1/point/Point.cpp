@@ -3,15 +3,17 @@
 using namespace std;
 
 Point::Point(){
-
+    x = 0;
+    y = 0;
 }
 
 Point::Point(double x, double y){
-
+    this->x = x;
+    this->y = y;
 }
 
 string Point::to_string(){
-    return "";
+    return "()";
 }
 
 Point Point::operator+(Point& p){
