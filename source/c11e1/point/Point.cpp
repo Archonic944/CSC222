@@ -17,5 +17,5 @@ string Point::to_string(){
 }
 
 Point Point::operator+(Point& p){
-    return Point(0,0);
+    return Point(p.x + x, p.y + y);
 }
