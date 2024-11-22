@@ -20,6 +20,10 @@ Time::Time(){
     s = 0;
 }
 
+Time Time::operator+(Time &t){
+    return Time();
+}
+
 string Time::to_string(){
     int m = s/60;
     int h = m/60;

@@ -10,6 +10,7 @@ struct Time {
     Time(int h, int m);
     Time();
     string to_string();
+    Time operator+(Time &t);
 };
 
 #endif
