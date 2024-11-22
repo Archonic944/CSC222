@@ -8,12 +8,12 @@ Time::Time(int ss){
     s = ss;
 }
 
-Time::Time(int h, int m, int s){
-
+Time::Time(int h, int m, int ss){
+    s = ss + (m * 60) + (h * 3600);
 }
 
 Time::Time(int h, int m){
-    
+    s = h * 3600 + m * 60;
 }
 
 Time::Time(){
