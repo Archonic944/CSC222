@@ -21,7 +21,7 @@ Time::Time(){
 }
 
 Time Time::operator+(Time &t){
-    return Time();
+    return Time(t.s + this->s);
 }
 
 string Time::to_string(){
