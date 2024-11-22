@@ -22,3 +22,7 @@ Fraction::Fraction() {
     num = 0;
     den = 1;
 }
+
+Fraction Fraction::minus(Fraction f){
+    
+}

@@ -17,3 +17,10 @@ TEST_CASE("Test add"){
     Fraction f3 = f1.plus(f2);
     CHECK(f3.to_string() == "5/6");
 }
+
+TEST_CASE("Test minus"){
+    Fraction f1(1,2);
+    Fraction f2(1,6);
+    Fraction f3 = f1.minus(f2);
+    CHECK(f3.to_string() == "2/6");
+}
