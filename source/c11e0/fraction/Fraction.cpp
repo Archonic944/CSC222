@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Fraction.h"
+#include <numeric>
 
 using namespace std;
 
@@ -8,11 +9,14 @@ string Fraction::to_string() {
 }
 
 bool Fraction::equals(Fraction f){
-
+    Fraction f1 = this->reduce();
+    Fraction f2 = f.reduce();
+    return f1.num == f2.num && f1.den == f2.den;
 }
 
-Fraction Fraction::reduce(Fraction f) {
-    
+Fraction Fraction::reduce() {
+    int gcd = std::gcd(num, den);
+    return Fraction(num / gcd, den / gcd);
 }
 
 Fraction Fraction::plus(Fraction f) {

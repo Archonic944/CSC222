@@ -34,7 +34,7 @@ elif [ -d "$1" ]; then
 
     # Compile all .cc and .cpp files
     mkdir -p ./out
-    g++ -o ./out/all_files_combined.out $cpp_files --std=c++11
+    g++ -o ./out/all_files_combined.out $cpp_files --std=c++17
 
     # Execute the compiled binary
     ./out/all_files_combined.out

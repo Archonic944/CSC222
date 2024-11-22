@@ -27,7 +27,7 @@ TEST_CASE("Test minus"){
 
 TEST_CASE("Test reduce"){
     Fraction f1(2, 4);
-    Fraction f2 = f1.reduce(f1);
+    Fraction f2 = f1.reduce();
     CHECK(f2.to_string() == "1/2");
 }
 

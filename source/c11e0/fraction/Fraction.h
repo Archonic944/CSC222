@@ -12,6 +12,6 @@ struct Fraction {
     Fraction minus(Fraction f);
     Fraction times(Fraction f);
     Fraction divided_by(Fraction f);
-    Fraction reduce(Fraction f);
+    Fraction reduce();
     bool equals(Fraction f);
 };
