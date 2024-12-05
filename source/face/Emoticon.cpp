@@ -28,3 +28,7 @@ void Emoticon::make_happier(){
     this->happiness++;
     if(this->happiness > 9) this->happiness = 9;
 }
+
+void Emoticon::make_sadder(){
+    
+}
