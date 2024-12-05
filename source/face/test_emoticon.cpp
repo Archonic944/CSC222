@@ -10,3 +10,9 @@ TEST_CASE("Test can create and render all emoticons"){
         CHECK(face.to_string() == Emoticon::FACE_LIST[i]);
     }
 }
+
+TEST_CASE("Test can make emoticon happier"){
+    Emoticon face = Emoticon(0);
+    face.make_happier();
+    CHECK(face.happiness == 1);
+}
