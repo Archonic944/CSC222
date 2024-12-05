@@ -5,8 +5,8 @@
 using namespace std;
 
 TEST_CASE("Test can create and render all emoticons"){
-    for(int i = 0; i<FACE_LIST.size(); i++){
+    for(int i = 0; i<Emoticon::FACE_LIST.size(); i++){
         Emoticon face = Emoticon(i);
-        CHECK(face.to_string() == FACE_LIST[i]);
+        CHECK(face.to_string() == Emoticon::FACE_LIST[i]);
     }
 }

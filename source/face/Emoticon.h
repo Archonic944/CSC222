@@ -4,9 +4,10 @@
 using namespace std;
 
 //courtesy of emojidb.org
-extern vector<string> FACE_LIST;
+
 
 struct Emoticon {
+    static vector<string> FACE_LIST;
     string to_string();
     string getEmotion();
     void setEmotion(string);
