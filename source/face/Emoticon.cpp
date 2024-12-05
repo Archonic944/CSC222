@@ -25,5 +25,6 @@ Emoticon::Emoticon(int happiness){
 }
 
 void Emoticon::make_happier(){
-    
+    this->happiness++;
+    if(this->happiness > 9) this->happiness = 9;
 }
