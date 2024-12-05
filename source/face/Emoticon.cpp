@@ -16,10 +16,14 @@ vector<string> Emoticon::FACE_LIST = {
 };
 
 string Emoticon::to_string(){
-    string a = "";
-    return a;
+    cout << FACE_LIST[happiness] << endl;
+    return FACE_LIST[happiness];
 }
 
 Emoticon::Emoticon(int happiness){
     this->happiness = happiness;
+}
+
+void Emoticon::make_happier(){
+    
 }

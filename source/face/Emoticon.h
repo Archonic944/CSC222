@@ -11,6 +11,8 @@ struct Emoticon {
     string to_string();
     string getEmotion();
     void setEmotion(string);
+    void make_happier();
+    void make_sadder();
 
     int happiness; //Happiness on a scale of 0-10
 
