@@ -12,16 +12,6 @@ vector<string> rank_strings = {"Joker", "Ace", "2", "3", "4", "5", "6",
                                    "King"};
 
 
-
-bool Card::operator>(const Card& c) const {
-    if(c.suit > suit) return false;
-    else if(c.suit < suit) return true;
-    else return rank > c.rank;
-}
-
-bool Card::operator==(const Card& c2) const {
-    return (rank == c2.rank && suit == c2.suit);
-}
 string Card::to_string() const {
     if (rank == 0) return rank_strings[rank];
     else return rank_strings[rank] + " of " + suit_strings[suit];
@@ -37,18 +27,34 @@ Card::Card(int s, int r){
     rank = r;
 }
 
-bool Card::operator!=(const Card& c) const{
-    return false;
-}
-
-bool Card::operator>=(const Card& c) const{
-    return false;
-}
-
-bool Card::operator<=(const Card& c) const{
-    return false;
+bool Card::operator>(const Card& c) const {
+    if(c.suit > suit) return false;
+    else if(c.suit < suit) return true;
+    else return rank > c.rank;
 }
 
 bool Card::operator<(const Card& c) const{
-    return false;
+    return !(*this > c) && !(*this == c); //could be made more efficient by not dereferencing twice
+}
+
+bool Card::operator<=(const Card& c) const{
+    return !(*this > c);
+}
+
+bool Card::operator>=(const Card& c) const{
+    return (*this > c) || (*this == c);
+}
+
+bool Card::operator==(const Card& c2) const {
+    return (rank == c2.rank && suit == c2.suit);
+}
+
+bool Card::operator!=(const Card& c2) const {
+    return !(this->operator==(c2));
+}
+
+// Implement left shift operator
+ostream& operator<<(ostream& os, const Card& c){
+    os << c.to_string();
+    return os;
 }

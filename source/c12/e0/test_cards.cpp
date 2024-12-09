@@ -40,8 +40,8 @@ TEST_CASE("Test comparison of Cards") {
     Card c3(1, 10);
     Card c4(1, 10);
     CHECK(c2 < c1);
-    CHECK(c3 <= c2);
+    CHECK(!(c3 <= c2));
     CHECK(c1 >= c3);
     CHECK(c3 == c4);
-    CHECK(c3 != c4);
+    CHECK(!(c3 != c4));
 }
