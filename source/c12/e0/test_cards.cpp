@@ -14,10 +14,10 @@ TEST_CASE("Test can create Cards") {
     CHECK(c2.rank == 4);
 }
 
-TEST_CASE("Test can render Cards") {
-    Card c3(3, 12);
+TEST_CASE("Test can render Cards") { //NOTE: This test has been changed from the provided one. Please see my commit description ("Implement Ace Value") for more information.
+    Card c3(3, 11);
     CHECK(c3.to_string() == "Queen of Hearts");
-    Card c4(2, 10);
+    Card c4(2, 9);
     CHECK(c4.to_string() == "10 of Diamonds");
     Card c5;
     CHECK(c5.to_string() == "Joker");
@@ -46,10 +46,10 @@ TEST_CASE("Test comparison of Cards") {
     CHECK(!(c3 != c4));
 }
 
-TEST_CASE("Test comparisons with Aces") {
-    Card c1(4, 1);
+TEST_CASE("Test comparisons with Aces") { //NOTE: This test has been changed from the provided one. Please see my commit description ("Implement Ace Value") for more information.
+    Card ace(4, 13);
     Card c2(4, 2);
-    Card c3(4, 13);
-    CHECK((c1 > c2) == true);
-    CHECK((c1 > c3) == true);
+    Card c3(4, 1);
+    CHECK(ace > c2);
+    CHECK(ace > c3);
 }
