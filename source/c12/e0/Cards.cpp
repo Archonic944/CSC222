@@ -24,3 +24,11 @@ Card::Card(int s, int r){
     suit = s;
     rank = r;
 }
+
+bool Card::operator>(const Card& card) const {
+    return false;
+}
+
+bool Card::operator==(const Card& card) const {
+    return false;
+}
