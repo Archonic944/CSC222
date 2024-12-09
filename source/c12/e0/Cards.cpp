@@ -25,10 +25,12 @@ Card::Card(int s, int r){
     rank = r;
 }
 
-bool Card::operator>(const Card& card) const {
-    return false;
+bool Card::operator>(const Card& c) const {
+    if(c.suit > suit) return false;
+    else if(c.suit < suit) return true;
+    else return rank > c.rank;
 }
 
-bool Card::operator==(const Card& card) const {
-    return false;
+bool Card::operator==(const Card& c2) const {
+    return (rank == c2.rank && suit == c2.suit);
 }
