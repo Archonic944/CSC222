@@ -53,3 +53,4 @@ TEST_CASE("Test comparisons with Aces") { //NOTE: This test has been changed fro
     CHECK(ace > c2);
     CHECK(ace > c3);
 }
+

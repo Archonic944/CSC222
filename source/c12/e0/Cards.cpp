@@ -57,3 +57,13 @@ ostream& operator<<(ostream& os, const Card& c){
     os << c.to_string();
     return os;
 }
+
+static const vector<Card> build_deck(){
+    vector<Card> cards = {};
+    for(int i = 0; i<5; i++){
+        for(int j = 1; j<=13; j++){
+            cards.push_back(Card(j, i));
+        }
+    }
+    return cards;
+}
