@@ -33,3 +33,15 @@ TEST_CASE("Can compare Cards"){
     CHECK(c1 == c2);
     CHECK(c3 > c2);
 }
+
+TEST_CASE("Test comparison of Cards") {
+    Card c1(2, 9);
+    Card c2(1, 9);
+    Card c3(1, 10);
+    Card c4(1, 10);
+    CHECK(c2 < c1);
+    CHECK(c3 <= c2);
+    CHECK(c1 >= c3);
+    CHECK(c3 == c4);
+    CHECK(c3 != c4);
+}
