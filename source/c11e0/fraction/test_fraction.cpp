@@ -65,3 +65,10 @@ TEST_CASE("Test third Fraction constructor using a string") {
     CHECK(f2.num == 37);
     CHECK(f2.den == 149);
 }
+
+TEST_CASE("Test Fractions are stored in lowest terms") {
+    Fraction f1(6, 8);
+    CHECK(f1.to_string() == "3/4");
+    Fraction f2(8, 16);
+    CHECK(f2.to_string() == "1/2");
+}
