@@ -1,7 +1,10 @@
+#include <string>
+
 struct Fraction {
     int num;
     int den;
 
+    Fraction(std::string s);
     Fraction(int n, int d);
     Fraction();
 

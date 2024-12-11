@@ -55,3 +55,12 @@ TEST_CASE("Test can create Fractions using two constructors") {
     CHECK(f2.num == 3);
     CHECK(f2.den == 4);
 }
+
+TEST_CASE("Test third Fraction constructor using a string") {
+    Fraction f1("3/4");
+    CHECK(f1.num == 3);
+    CHECK(f1.den == 4);
+    Fraction f2("37/149");
+    CHECK(f2.num == 37);
+    CHECK(f2.den == 149);
+}

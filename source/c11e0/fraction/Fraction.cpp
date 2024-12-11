@@ -18,6 +18,10 @@ Fraction Fraction::plus(Fraction f) {
     return Fraction(n, d);
 }
 
+Fraction::Fraction(string str){
+    
+}
+
 Fraction::Fraction(int n, int d) {
     int gcd = std::gcd(n, d);
     num = n/gcd;
