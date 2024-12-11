@@ -46,3 +46,12 @@ TEST_CASE("Test divided_by"){
     Fraction f3 = f1.divided_by(f2);
     CHECK(f3.equals(Fraction(3, 8)));
 }
+
+TEST_CASE("Test can create Fractions using two constructors") {
+    Fraction f1;
+    CHECK(f1.num == 0);
+    CHECK(f1.den == 1);
+    Fraction f2(3, 4);
+    CHECK(f2.num == 3);
+    CHECK(f2.den == 4);
+}
