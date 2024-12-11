@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Fraction.h"
 #include <numeric>
+#include <stdexcept>
 
 using namespace std;
 
@@ -19,7 +20,13 @@ Fraction Fraction::plus(Fraction f) {
 }
 
 Fraction::Fraction(string str){
-    
+    int indexOfSlash1 = str.find_first_of("/");
+    if(indexOfSlash1 == -1 || (indexOfSlash1 != str.find_last_of("/"))){
+        throw invalid_argument("Invalid fraction string: " + str);
+    }
+    string numStr = str.substr(0, indexOfSlash1);
+    string denoStr = str.substr(indexOfSlash1 + 1, str.length() - (indexOfSlash1 + 1));
+    new (this) Fraction (stoi(numStr), stoi(denoStr));
 }
 
 Fraction::Fraction(int n, int d) {

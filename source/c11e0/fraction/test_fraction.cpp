@@ -61,6 +61,7 @@ TEST_CASE("Test third Fraction constructor using a string") {
     CHECK(f1.num == 3);
     CHECK(f1.den == 4);
     Fraction f2("37/149");
+    cout << f2.num << " <== num in test case" << endl;
     CHECK(f2.num == 37);
     CHECK(f2.den == 149);
 }
