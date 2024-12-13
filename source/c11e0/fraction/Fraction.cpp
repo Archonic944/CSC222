@@ -5,10 +5,7 @@
 
 using namespace std;
 
-string Fraction::to_string() {
-    if(den == 1) return std::to_string(num);
-    return std::to_string(num) + "/" + std::to_string(den);
-}
+//Helpers, to_string, equals (the boring stuff)
 
 bool is_number(const std::string& s)
 {
@@ -17,15 +14,16 @@ bool is_number(const std::string& s)
     return !s.empty() && it == s.end();
 }
 
+string Fraction::to_string() {
+    if(den == 1) return std::to_string(num);
+    return std::to_string(num) + "/" + std::to_string(den);
+}
+
 bool Fraction::equals(Fraction f){
     return f.num == this->num && f.den == this->den;
 }
 
-Fraction Fraction::plus(Fraction f) {
-    int n = this->num * f.den + f.num * this->den;
-    int d = f.den * this->den;
-    return Fraction(n, d);
-}
+//Constructors
 
 Fraction::Fraction(string str){
     int indexOfSlash1 = str.find_first_of("/");
@@ -43,12 +41,6 @@ Fraction::Fraction(string str){
     (*this) = Fraction (stoi(numStr), stoi(denoStr));
 }
 
-Fraction::Fraction(int n, int d) {
-    int gcd = std::gcd(n, d);
-    num = n/gcd;
-    den = d/gcd;
-}
-
 Fraction::Fraction(int n){
     (*this) = Fraction(n, 1);
 }
@@ -56,6 +48,20 @@ Fraction::Fraction(int n){
 Fraction::Fraction() {
     num = 0;
     den = 1;
+}
+
+Fraction::Fraction(int n, int d) {
+    int gcd = std::gcd(n, d);
+    num = n/gcd;
+    den = d/gcd;
+}
+
+//Arithmetic operators
+
+Fraction Fraction::plus(Fraction f) {
+    int n = this->num * f.den + f.num * this->den;
+    int d = f.den * this->den;
+    return Fraction(n, d);
 }
 
 Fraction Fraction::minus(Fraction f){
@@ -75,3 +81,24 @@ Fraction Fraction::divided_by(Fraction f){
     int den = f.num * this->den;
     return Fraction(num, den);
 }
+
+//Comparison operators
+
+bool Fraction::operator>(const Fraction& f) const{
+    return false;
+};
+bool Fraction::operator<(const Fraction& f) const{
+    return false;
+};
+bool Fraction::operator>=(const Fraction& f) const{
+    return false;
+};
+bool Fraction::operator<=(const Fraction& f) const{
+    return false;
+};
+bool Fraction::operator==(const Fraction& f) const{
+    return false;
+};
+bool Fraction::operator!=(const Fraction& f) const{
+    return false;
+};

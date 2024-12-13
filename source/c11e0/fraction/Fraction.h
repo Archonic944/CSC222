@@ -16,5 +16,13 @@ struct Fraction {
     Fraction minus(Fraction f);
     Fraction times(Fraction f);
     Fraction divided_by(Fraction f);
+
+    bool operator>(const Fraction& f) const;
+    bool operator<(const Fraction& f) const;
+    bool operator>=(const Fraction& f) const;
+    bool operator<=(const Fraction& f) const;
+    bool operator==(const Fraction& f) const;
+    bool operator!=(const Fraction& f) const;
+
     bool equals(Fraction f);
 };
