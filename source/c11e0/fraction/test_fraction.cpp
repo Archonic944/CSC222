@@ -81,3 +81,10 @@ TEST_CASE("Test can construct Fraction from integer") {
     CHECK(f2.num == 42);
     CHECK(f2.den == 1);
 }
+
+TEST_CASE("Test integer Fractions render properly") {
+    Fraction f1(5, 1);
+    CHECK(f1.to_string() == "5");
+    Fraction f2(18, 3);
+    CHECK(f2.to_string() == "6");
+}
