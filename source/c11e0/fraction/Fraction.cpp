@@ -6,6 +6,7 @@
 using namespace std;
 
 string Fraction::to_string() {
+    if(den == 1) return std::to_string(num);
     return std::to_string(num) + "/" + std::to_string(den);
 }
 
