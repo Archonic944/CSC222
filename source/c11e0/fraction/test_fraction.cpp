@@ -74,6 +74,11 @@ TEST_CASE("Test comparison operators for Fractions") {
     CHECK((f3 != f2) == true);
     CHECK((f4 >= f1) == true);
     CHECK((f4 <= f2) == true);
+
+    CHECK(f1 > 0);
+    CHECK(f2 < 1);
+    CHECK(f3 <= 1);
+    CHECK(f2 != 1);
 }
 
 TEST_CASE("Test arthmetic operators"){
@@ -89,4 +94,9 @@ TEST_CASE("Test arthmetic operators"){
     CHECK(f2 * f3 == f4);
     CHECK(f3 - f4 == f4);
     CHECK(f3 / f2 == f5);
+
+    CHECK((f1 + 1).to_string() == "3/2");
+    CHECK((f1 - 1).to_string() == "-1/2");
+    CHECK((f1 * 2).to_string() == "1");
+    CHECK((f1 / 2).to_string() == "1/4");
 }
