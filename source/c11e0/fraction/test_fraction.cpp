@@ -111,3 +111,18 @@ TEST_CASE("Test comparison operators for Fractions") {
     CHECK((f4 >= f1) == true);
     CHECK((f4 <= f2) == true);
 }
+
+TEST_CASE("Test arthmetic operators"){
+    Fraction f1(1, 4);
+    Fraction f2(1,2);
+    Fraction f3(2, 5);
+    Fraction f4(1, 5);
+    Fraction f5(4,5);
+    Fraction f6(2);
+
+    CHECK((f1 + f1) == f2);
+    CHECK(f1 * f6 == f2);
+    CHECK(f2 * f3 == f4);
+    CHECK(f3 - f4 == f4);
+    CHECK(f3 / f2 == f5);
+}

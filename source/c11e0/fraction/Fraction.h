@@ -24,5 +24,10 @@ struct Fraction {
     bool operator==(const Fraction& f) const;
     bool operator!=(const Fraction& f) const;
 
+    Fraction operator+(const Fraction& f) const;
+    Fraction operator*(const Fraction& f) const;
+    Fraction operator-(const Fraction& f) const;
+    Fraction operator/(const Fraction& f) const;
+
     bool equals(const Fraction& f) const;
 };

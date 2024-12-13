@@ -56,7 +56,23 @@ Fraction::Fraction(int n, int d) {
     den = d/gcd;
 }
 
-//Arithmetic operators
+//Arithmetic operators + functions leftover from previous exercise
+
+Fraction Fraction::operator+(const Fraction& f) const {
+    return Fraction(0, 1); // Scaffolded function body
+}
+
+Fraction Fraction::operator*(const Fraction& f) const {
+    return Fraction(0, 1); // Scaffolded function body
+}
+
+Fraction Fraction::operator-(const Fraction& f) const {
+    return Fraction(0, 1); // Scaffolded function body
+}
+
+Fraction Fraction::operator/(const Fraction& f) const {
+    return Fraction(0, 1); // Scaffolded function body
+}
 
 Fraction Fraction::plus(Fraction f) {
     int n = this->num * f.den + f.num * this->den;
