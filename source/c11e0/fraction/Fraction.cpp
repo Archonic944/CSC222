@@ -36,8 +36,7 @@ Fraction::Fraction(int n, int d) {
 }
 
 Fraction::Fraction(int n){
-    num = 0;
-    den = 1;
+    (*this) = Fraction(n, 1);
 }
 
 Fraction::Fraction() {
