@@ -59,40 +59,24 @@ Fraction::Fraction(int n, int d) {
 //Arithmetic operators + functions leftover from previous exercise
 
 Fraction Fraction::operator+(const Fraction& f) const {
-    return Fraction(0, 1); // Scaffolded function body
-}
-
-Fraction Fraction::operator*(const Fraction& f) const {
-    return Fraction(0, 1); // Scaffolded function body
-}
-
-Fraction Fraction::operator-(const Fraction& f) const {
-    return Fraction(0, 1); // Scaffolded function body
-}
-
-Fraction Fraction::operator/(const Fraction& f) const {
-    return Fraction(0, 1); // Scaffolded function body
-}
-
-Fraction Fraction::plus(Fraction f) {
     int n = this->num * f.den + f.num * this->den;
     int d = f.den * this->den;
     return Fraction(n, d);
 }
 
-Fraction Fraction::minus(Fraction f){
+Fraction Fraction::operator-(const Fraction& f) const {
     int den = f.den * this->den;
     int num = this->num * f.den - f.num * this->den;
-    return Fraction(num,den);
+    return Fraction(num, den);
 }
 
-Fraction Fraction::times(Fraction f){
+Fraction Fraction::operator*(const Fraction& f) const {
     int num = this->num * f.num;
     int den = this->den * f.den;
     return Fraction(num, den);
 }
 
-Fraction Fraction::divided_by(Fraction f){
+Fraction Fraction::operator/(const Fraction& f) const {
     int num = f.den * this->num;
     int den = f.num * this->den;
     return Fraction(num, den);
