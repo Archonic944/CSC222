@@ -72,3 +72,12 @@ TEST_CASE("Test Fractions are stored in lowest terms") {
     Fraction f2(8, 16);
     CHECK(f2.to_string() == "1/2");
 }
+
+TEST_CASE("Test can construct Fraction from integer") {
+    Fraction f1(5);
+    CHECK(f1.num == 5);
+    CHECK(f1.den == 1);
+    Fraction f2(42);
+    CHECK(f2.num == 42);
+    CHECK(f2.den == 1);
+}

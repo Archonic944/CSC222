@@ -6,6 +6,7 @@ struct Fraction {
 
     Fraction(std::string s);
     Fraction(int n, int d);
+    Fraction(int n);
     Fraction();
 
     //NOTE: I decided to implement to_string instead of print because it's easier to test

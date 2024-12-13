@@ -35,6 +35,11 @@ Fraction::Fraction(int n, int d) {
     den = d/gcd;
 }
 
+Fraction::Fraction(int n){
+    num = 0;
+    den = 1;
+}
+
 Fraction::Fraction() {
     num = 0;
     den = 1;
