@@ -37,5 +37,11 @@ struct Fraction {
     Fraction operator-(const Fraction& f) const;
     Fraction operator/(const Fraction& f) const;
 
+    //Arithmetic with integers
+    Fraction operator+(int value) const;
+    Fraction operator*(int value) const;
+    Fraction operator-(int value) const;
+    Fraction operator/(int value) const;
+
     bool equals(const Fraction& f) const;
 };

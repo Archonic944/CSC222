@@ -108,7 +108,22 @@ bool Fraction::operator!=(const Fraction& f) const{
     return !(this->equals(f));
 };
 
-//Comparison operators with integers
+//Arithmetic operators with integers
+Fraction Fraction::operator+(int value) const {
+    return *this + Fraction(value);
+}
+
+Fraction Fraction::operator-(int value) const {
+    return *this - Fraction(value);
+}
+
+Fraction Fraction::operator*(int value) const {
+    return *this * Fraction(value);
+}
+
+Fraction Fraction::operator/(int value) const {
+    return *this / Fraction(value);
+}
 
 // Comparison operators with integers
 bool Fraction::operator>(int value) const {

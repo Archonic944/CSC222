@@ -95,8 +95,8 @@ TEST_CASE("Test arthmetic operators"){
     CHECK(f3 - f4 == f4);
     CHECK(f3 / f2 == f5);
 
-    CHECK((f1 + 1).to_string() == "3/2");
-    CHECK((f1 - 1).to_string() == "-1/2");
-    CHECK((f1 * 2).to_string() == "1");
-    CHECK((f1 / 2).to_string() == "1/4");
+    CHECK((f1 + 1).to_string() == "5/4");
+    CHECK((f1 - 1).to_string() == "-3/4");
+    CHECK((f2 * 2).to_string() == "1");
+    CHECK((f2 / 2).to_string() == "1/4");
 }
