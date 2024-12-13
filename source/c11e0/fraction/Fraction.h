@@ -24,5 +24,5 @@ struct Fraction {
     bool operator==(const Fraction& f) const;
     bool operator!=(const Fraction& f) const;
 
-    bool equals(Fraction f);
+    bool equals(const Fraction& f) const;
 };

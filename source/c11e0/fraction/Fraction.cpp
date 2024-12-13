@@ -19,7 +19,7 @@ string Fraction::to_string() {
     return std::to_string(num) + "/" + std::to_string(den);
 }
 
-bool Fraction::equals(Fraction f){
+bool Fraction::equals(const Fraction& f) const{
     return f.num == this->num && f.den == this->den;
 }
 
@@ -87,18 +87,23 @@ Fraction Fraction::divided_by(Fraction f){
 bool Fraction::operator>(const Fraction& f) const{
     return false;
 };
+
 bool Fraction::operator<(const Fraction& f) const{
     return false;
 };
+
 bool Fraction::operator>=(const Fraction& f) const{
     return false;
 };
+
 bool Fraction::operator<=(const Fraction& f) const{
     return false;
 };
+
 bool Fraction::operator==(const Fraction& f) const{
-    return false;
+    return this->equals(f);
 };
+
 bool Fraction::operator!=(const Fraction& f) const{
-    return false;
+    return !(this->equals(f));
 };
