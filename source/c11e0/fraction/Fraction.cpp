@@ -93,11 +93,11 @@ bool Fraction::operator>=(const Fraction& f) const{
 };
 
 bool Fraction::operator<(const Fraction& f) const{
-    return false;
+    return !(this->operator>=(f));;
 };
 
 bool Fraction::operator<=(const Fraction& f) const{
-    return false;
+    return this->operator<(f) || this->equals(f);
 };
 
 bool Fraction::operator==(const Fraction& f) const{
