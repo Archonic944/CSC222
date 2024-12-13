@@ -85,14 +85,14 @@ Fraction Fraction::divided_by(Fraction f){
 //Comparison operators
 
 bool Fraction::operator>(const Fraction& f) const{
-    return false;
-};
-
-bool Fraction::operator<(const Fraction& f) const{
-    return false;
+    return (this->num * f.den) > (f.num * this->den);
 };
 
 bool Fraction::operator>=(const Fraction& f) const{
+    return this->operator>(f) || this->equals(f);
+};
+
+bool Fraction::operator<(const Fraction& f) const{
     return false;
 };
 
