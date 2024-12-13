@@ -24,6 +24,14 @@ struct Fraction {
     bool operator==(const Fraction& f) const;
     bool operator!=(const Fraction& f) const;
 
+    // Comparison operators with integers
+    bool operator>(int value) const;
+    bool operator<(int value) const;
+    bool operator>=(int value) const;
+    bool operator<=(int value) const;
+    bool operator==(int value) const;
+    bool operator!=(int value) const;
+
     Fraction operator+(const Fraction& f) const;
     Fraction operator*(const Fraction& f) const;
     Fraction operator-(const Fraction& f) const;

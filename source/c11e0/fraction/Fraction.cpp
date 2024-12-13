@@ -107,3 +107,30 @@ bool Fraction::operator==(const Fraction& f) const{
 bool Fraction::operator!=(const Fraction& f) const{
     return !(this->equals(f));
 };
+
+//Comparison operators with integers
+
+// Comparison operators with integers
+bool Fraction::operator>(int value) const {
+    return *this > Fraction(value);
+}
+
+bool Fraction::operator<(int value) const {
+    return *this < Fraction(value);
+}
+
+bool Fraction::operator>=(int value) const {
+    return *this >= Fraction(value);
+}
+
+bool Fraction::operator<=(int value) const {
+    return *this <= Fraction(value);
+}
+
+bool Fraction::operator==(int value) const {
+    return *this == Fraction(value);
+}
+
+bool Fraction::operator!=(int value) const {
+    return *this != Fraction(value);
+}
