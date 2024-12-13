@@ -88,3 +88,12 @@ TEST_CASE("Test integer Fractions render properly") {
     Fraction f2(18, 3);
     CHECK(f2.to_string() == "6");
 }
+
+TEST_CASE("Test string constructor with integers") {
+    Fraction f1("15");
+    CHECK(f1.num == 15);
+    CHECK(f1.den == 1);
+    Fraction f2("42");
+    CHECK(f2.num == 42);
+    CHECK(f2.den == 1);
+}
