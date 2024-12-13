@@ -10,6 +10,13 @@ string Fraction::to_string() {
     return std::to_string(num) + "/" + std::to_string(den);
 }
 
+bool is_number(const std::string& s)
+{
+    std::string::const_iterator it = s.begin();
+    while (it != s.end() && std::isdigit(*it)) ++it;
+    return !s.empty() && it == s.end();
+}
+
 bool Fraction::equals(Fraction f){
     return f.num == this->num && f.den == this->den;
 }
@@ -23,11 +30,17 @@ Fraction Fraction::plus(Fraction f) {
 Fraction::Fraction(string str){
     int indexOfSlash1 = str.find_first_of("/");
     if(indexOfSlash1 == -1 || (indexOfSlash1 != str.find_last_of("/"))){
-        throw invalid_argument("Invalid fraction string: " + str);
+        if(is_number(str)){
+            (*this) = Fraction(stoi(str), 1);
+            return;
+        }else throw invalid_argument("Invalid fraction string: " + str);
     }
     string numStr = str.substr(0, indexOfSlash1);
     string denoStr = str.substr(indexOfSlash1 + 1, str.length() - (indexOfSlash1 + 1));
-    new (this) Fraction (stoi(numStr), stoi(denoStr));
+    if(!is_number(numStr) || !is_number(denoStr)){
+        throw invalid_argument("Invalid fraction string: " + str);
+    }
+    (*this) = Fraction (stoi(numStr), stoi(denoStr));
 }
 
 Fraction::Fraction(int n, int d) {

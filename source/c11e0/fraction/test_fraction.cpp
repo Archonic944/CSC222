@@ -91,6 +91,7 @@ TEST_CASE("Test integer Fractions render properly") {
 
 TEST_CASE("Test string constructor with integers") {
     Fraction f1("15");
+    cout << f1.num << endl;
     CHECK(f1.num == 15);
     CHECK(f1.den == 1);
     Fraction f2("42");
