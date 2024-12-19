@@ -15,7 +15,10 @@ void Deck::print() const {
 }
 
 int Deck::find(const Card& c) const{
-    return 0;
+    for(int i = 0; i<cards.size(); i++){
+        if(cards[i] == c) return i;
+    }
+    return -1;
 }
 
 //constructors
