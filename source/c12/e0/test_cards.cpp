@@ -5,22 +5,15 @@
 #include "Cards.h"
 using namespace std;
 
-TEST_CASE("Test can create Cards") {
-    Card c1;
-    CHECK(c1.suit == 0);
-    CHECK(c1.rank == 0);
-    Card c2(3, 4);
-    CHECK(c2.suit == 3);
-    CHECK(c2.rank == 4);
-}
-
-TEST_CASE("Test can render Cards") { //NOTE: This test has been changed from the provided one. Please see my commit description ("Implement Ace Value") for more information.
-    Card c3(3, 11);
+TEST_CASE("Test can create and render Cards") {
+    Card c1(DIAMONDS, JACK);
+    CHECK(c1.to_string() == "Jack of Diamonds");
+    Card c2;
+    CHECK(c2.to_string() == "Joker");
+    Card c3(HEARTS, QUEEN);
     CHECK(c3.to_string() == "Queen of Hearts");
-    Card c4(2, 9);
-    CHECK(c4.to_string() == "10 of Diamonds");
-    Card c5;
-    CHECK(c5.to_string() == "Joker");
+    Card c4(SPADES, SEVEN);
+    CHECK(c4.to_string() == "7 of Spades");
 }
 
 TEST_CASE("Can compare Cards"){

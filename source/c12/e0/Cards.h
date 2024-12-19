@@ -1,16 +1,15 @@
 #include <string>
 
 using namespace std;
+
+enum Suit { NONE, CLUBS, DIAMONDS, HEARTS, SPADES };
+enum Rank { JOKER, TWO = 2, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, 
+            NINE, TEN, JACK, QUEEN, KING, ACE };
+
 struct Card
 {
-    int suit, rank;
-    //a handy-dandy enumeration for if you want to initialize a card of a specific suit
-    static const int NONE = 0;
-    static const int CLUBS = 1;
-    static const int HEARTS = 2;
-    static const int SPADES = 3;
-    static const int DIAMONDS = 4;
-    static const vector<Card> build_deck();
+    Suit suit;
+    Rank rank;
     Card();
     Card(int s, int r);
     bool operator==(const Card&) const;

@@ -7,9 +7,9 @@ using namespace std;
 
 vector<string> suit_strings = {"None", "Clubs", "Diamonds",
                                    "Hearts", "Spades"};
-vector<string> rank_strings = {"Joker", "2", "3", "4", "5", "6",
+vector<string> rank_strings = {"Joker", "None", "2", "3", "4", "5", "6",
                                    "7", "8", "9", "10", "Jack", "Queen",
-                                   "King", "Ace"};
+                                   "King", "Ace"}; //i didn't want to change the enum values... but they leave a gap between joker and 2. I inserted "none." pretty bad but whatever
 
 string Card::to_string() const {
     if (rank == 0) return rank_strings[rank];
@@ -17,13 +17,13 @@ string Card::to_string() const {
 }
 
 Card::Card(){
-    suit = 0;
-    rank = 0;
+    suit = Suit::NONE;
+    rank = Rank::JOKER;
 }
 
 Card::Card(int s, int r){
-    suit = s;
-    rank = r;
+    suit = Suit(s);
+    rank = Rank(r);
 }
 
 bool Card::operator>(const Card& c) const {
@@ -56,14 +56,4 @@ bool Card::operator!=(const Card& c2) const {
 ostream& operator<<(ostream& os, const Card& c){
     os << c.to_string();
     return os;
-}
-
-static const vector<Card> build_deck(){
-    vector<Card> cards = {};
-    for(int i = 0; i<5; i++){
-        for(int j = 1; j<=13; j++){
-            cards.push_back(Card(j, i));
-        }
-    }
-    return cards;
 }
