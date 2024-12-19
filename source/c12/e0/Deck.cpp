@@ -5,7 +5,7 @@
 
 //utils
 int random_between(int low, int high) {
-    return 0;
+    return low + rand() % (high - low + 1);
 }
 
 void Deck::print() const {
