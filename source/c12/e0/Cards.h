@@ -6,6 +6,7 @@ enum Suit { NONE, CLUBS, DIAMONDS, HEARTS, SPADES };
 enum Rank { JOKER, TWO = 2, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, 
             NINE, TEN, JACK, QUEEN, KING, ACE };
 
+//Single card structure
 struct Card
 {
     Suit suit;
@@ -19,4 +20,19 @@ struct Card
     bool operator<=(const Card&) const;
     bool operator!=(const Card&) const;
     string to_string() const;
+};
+
+// Deck structure
+struct Deck {
+    vector<Card> cards;
+
+    Deck(int size);
+    Deck();
+    void print() const;
+    void shuffle();
+    void sort();
+    Deck subdeck(int l, int h) const;
+    void add_card(const Card& c);
+    Card remove_card();
+    void swap_cards(int i, int j);
 };
