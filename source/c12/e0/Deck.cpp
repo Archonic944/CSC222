@@ -15,7 +15,7 @@ void Deck::print() const {
 }
 
 int Deck::find(const Card& c) const{
-    return -1;
+    return 0;
 }
 
 //constructors
@@ -46,9 +46,7 @@ void Deck::shuffle() {
 }
 
 void Deck::sort() {
-    for (int i = 0; i < cards.size(); i++) {
-        
-    }
+    
 }
 
 //add/change contents
@@ -71,5 +69,7 @@ Card Deck::remove_card() {
 }
 
 void Deck::swap_cards(int i, int j) {
-    
+    Card temp = cards[i];
+    cards[i] = cards[j];
+    cards[j] = temp;
 }
