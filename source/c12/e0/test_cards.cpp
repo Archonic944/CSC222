@@ -16,27 +16,20 @@ TEST_CASE("Test can create and render Cards") {
     CHECK(c4.to_string() == "7 of Spades");
 }
 
-TEST_CASE("Can compare Cards"){
-    Card c1(1, 1);
-    Card c2(1,1);
-    Card c3(1,2);
-    Card c4(2,2);
-    Card c5(1,3);
-
-    CHECK(c1 == c2);
-    CHECK(c3 > c2);
-}
-
-TEST_CASE("Test comparison of Cards") {
-    Card c1(2, 9);
-    Card c2(1, 9);
-    Card c3(1, 10);
-    Card c4(1, 10);
-    CHECK(c2 < c1);
-    CHECK(!(c3 <= c2));
-    CHECK(c1 >= c3);
-    CHECK(c3 == c4);
-    CHECK(!(c3 != c4));
+TEST_CASE("Test for comparison of Cards") {
+    Card c1(HEARTS, QUEEN);
+    Card c2(HEARTS, QUEEN);
+    Card c3(SPADES, ACE);
+    Card c4(HEARTS, FIVE);
+    Card c5(HEARTS, FOUR);
+    Card c6(DIAMONDS, FOUR);
+    CHECK((c1 == c2) == true);
+    CHECK((c1 == c3) == false);
+    CHECK((c1 != c3) == true);
+    CHECK((c1 > c5) == true);
+    CHECK((c1 <= c5) == false);
+    CHECK((c6 < c5) == true);
+    CHECK((c5 >= c6) == true);
 }
 
 TEST_CASE("Test comparisons with Aces") { //NOTE: This test has been changed from the provided one. Please see my commit description ("Implement Ace Value") for more information.
