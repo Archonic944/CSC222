@@ -47,8 +47,7 @@ void Deck::shuffle() {
 
 void Deck::sort() {
     for (int i = 0; i < cards.size(); i++) {
-        //find the lowest card at or to the right of i
-        //swwap the ith card and the lowest card
+        
     }
 }
 
