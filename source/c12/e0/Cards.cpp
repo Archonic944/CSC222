@@ -57,3 +57,7 @@ ostream& operator<<(ostream& os, const Card& c){
     os << c.to_string();
     return os;
 }
+
+void Card::swap_cards(Card& c1, Card& c2){
+    
+}

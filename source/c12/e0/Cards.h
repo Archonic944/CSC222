@@ -22,6 +22,8 @@ struct Card
     string to_string() const;
 };
 
+void swap_cards(Card& c1, Card& c2);
+
 // Deck structure
 struct Deck {
     vector<Card> cards;
@@ -34,6 +36,6 @@ struct Deck {
     Deck subdeck(int l, int h) const;
     void add_card(const Card& c);
     Card remove_card();
-    void swap_cards(int i, int j);
+    void swap_card_positions(int i, int j);
     int find(const Card& c) const;
 };

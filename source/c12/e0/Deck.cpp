@@ -44,7 +44,7 @@ Deck::Deck() {
 void Deck::shuffle() {
     for (int i = 0; i < cards.size(); i++) {
         int rand_card = random_between(0, cards.size() - 1);
-        swap_cards(i, rand_card);
+        swap_card_positions(i, rand_card);
     }
 }
 
@@ -56,7 +56,7 @@ void Deck::sort() {
         for(int j = i; j<cards.size(); j++){
             if(cards[j] < cards[lowest_index]) lowest_index = j;
         }
-        swap_cards(i, lowest_index);
+        swap_card_positions(i, lowest_index);
     }
 }
 
@@ -79,7 +79,7 @@ Card Deck::remove_card() {
     return card;
 }
 
-void Deck::swap_cards(int i, int j) {
+void Deck::swap_card_positions(int i, int j) {
     if(i == j) return;
     Card temp = cards[i];
     cards[i] = cards[j];
