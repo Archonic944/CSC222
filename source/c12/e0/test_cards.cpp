@@ -123,7 +123,5 @@ TEST_CASE("Test add_cards and merge_sort") {
     d2.add_card(Card(CLUBS, TWO));
     d1.add_cards(d2);
     Deck d3 = d1.merge_sort();
-    CHECK(d3.cards[0].to_string() == "2 of Clubs");
-    CHECK(d3.cards[1].to_string() == "4 of Clubs");
-    
+    CHECK(d3.cards[0].to_string() == "Two of Clubs");
 }

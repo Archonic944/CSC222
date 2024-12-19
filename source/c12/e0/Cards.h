@@ -38,6 +38,6 @@ struct Deck {
     Card remove_card();
     void swap_card_positions(int i, int j);
     int find(const Card& c) const;
-    void merge_sort();
+    Deck merge_sort();
     void add_cards(const Deck& d);
 };

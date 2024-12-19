@@ -9,9 +9,11 @@ int random_between(int low, int high) {
 }
 
 void Deck::print() const {
+    cout << "Deck, size = " << cards.size() << endl;
     for (int i = 0; i < cards.size(); i++) {
-        cout << cards[i].to_string() << endl;
+        cout << " " << cards[i].to_string() << endl;
     }
+
 }
 
 int Deck::find(const Card& c) const{
@@ -94,13 +96,38 @@ void Deck::add_cards(const Deck& deck){
     }
 }
 
-void Deck::merge_sort(){
+Deck merge(Deck& left, Deck& right){ //merges two sorted decks into one sorted deck
+    int i = 0;
+    int j = 0;
+    Deck d(0);
+    while(i < left.cards.size() && j < right.cards.size()){
+        if(left.cards[i] < right.cards[j]){
+            d.add_card(left.cards[i]);
+            i++;
+        }else{
+            d.add_card(right.cards[j]);
+            j++;
+        }
+    }
+    //merge leftovers from left
+    while(i < left.cards.size()){
+        d.add_card(left.cards[i]);
+        i++;
+    }
+
+    //merge leftovers from right
+    while(j < right.cards.size()){
+        d.add_card(right.cards[i]);
+        j++;
+    }
+    return d;
+}
+
+Deck Deck::merge_sort(){
     int size = cards.size();
-    if(size == 1) return;
-    int mid = size / 2;
-    Deck left = subdeck(0, mid);
-    Deck right = subdeck(mid + 1, size - 1);
-    left.merge_sort();
-    right.merge_sort();
-    print();
+    if(size <= 1) return (*this);
+    int mid = (size) / 2;
+    Deck left = subdeck(0, mid - 1).merge_sort();
+    Deck right = subdeck(mid, size - 1).merge_sort();
+    return merge(left, right);
 }
