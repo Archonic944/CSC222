@@ -103,3 +103,10 @@ TEST_CASE("Test can swap two random cards") {
     CHECK(c1.to_string() == "Jack of Diamonds");
     CHECK(c2.to_string() == "Queen of Hearts");
 }
+
+TEST_CASE("Test create subdecks") {
+    Deck deck;
+    Deck subdeck = deck.subdeck(2, 10);
+    CHECK(subdeck.cards.size() == 9);
+    CHECK(subdeck.cards[0].to_string() == "4 of Clubs");
+}
