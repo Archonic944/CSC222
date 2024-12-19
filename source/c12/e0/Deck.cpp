@@ -60,7 +60,9 @@ void Deck::sort() {
     }
 }
 
-//add/change contents
+//**add/change contents**
+
+//creates a subdeck of [l,h]
 Deck Deck::subdeck(int l, int h) const {
     Deck sub(h - l + 1);
     for (int i = 0; i < sub.cards.size(); i++) {
@@ -84,4 +86,21 @@ void Deck::swap_card_positions(int i, int j) {
     Card temp = cards[i];
     cards[i] = cards[j];
     cards[j] = temp;
+}
+
+void Deck::add_cards(const Deck& deck){
+    for(int i = 0; i<deck.cards.size(); i++){
+        cards.push_back(deck.cards[i]);
+    }
+}
+
+void Deck::merge_sort(){
+    int size = cards.size();
+    if(size == 1) return;
+    int mid = size / 2;
+    Deck left = subdeck(0, mid);
+    Deck right = subdeck(mid + 1, size - 1);
+    left.merge_sort();
+    right.merge_sort();
+    print();
 }
