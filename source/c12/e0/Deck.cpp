@@ -14,6 +14,10 @@ void Deck::print() const {
     }
 }
 
+int Deck::find(const Card& c) const{
+    return -1;
+}
+
 //constructors
 Deck::Deck(int size) {
     vector<Card> temp(size);

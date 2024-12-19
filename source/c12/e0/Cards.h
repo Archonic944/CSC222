@@ -35,4 +35,5 @@ struct Deck {
     void add_card(const Card& c);
     Card remove_card();
     void swap_cards(int i, int j);
+    int find(const Card& c) const;
 };
