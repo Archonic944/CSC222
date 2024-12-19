@@ -60,3 +60,18 @@ TEST_CASE("Test find Card in Deck") {
     int pos2 = d.find(c2);
     CHECK(pos2 == -1);
 }
+
+TEST_CASE("Test can sort Cards in deck"){
+    Deck d = Deck();
+    d.shuffle();
+    d.sort();
+    CHECK(d.cards[0].to_string() == "2 of Clubs");
+    CHECK(d.cards[51].to_string() == "Ace of Spades");
+}
+
+TEST_CASE("Test can shuffle Cards in deck"){
+    Deck d = Deck();
+    d.shuffle();
+    CHECK(d.cards[0].to_string() != "2 of Clubs");
+    //there is a 1/52 chance that this test case will fail, even if the deck truly "shuffles"...
+}
