@@ -46,7 +46,15 @@ void Deck::shuffle() {
 }
 
 void Deck::sort() {
-    
+    for (int i = 0; i < cards.size() - 1; i++) {
+        //find the lowest card at or to the right of i
+        //swwap the ith card and the lowest card
+        int lowest_index = i;
+        for(int j = i; j<cards.size(); j++){
+            if(cards[j] < cards[lowest_index]) lowest_index = j;
+        }
+        swap_cards(i, lowest_index);
+    }
 }
 
 //add/change contents
@@ -69,6 +77,7 @@ Card Deck::remove_card() {
 }
 
 void Deck::swap_cards(int i, int j) {
+    if(i == j) return;
     Card temp = cards[i];
     cards[i] = cards[j];
     cards[j] = temp;
