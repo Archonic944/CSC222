@@ -1,9 +1,9 @@
 dependencies := hello.c goodbye.c
+output := $(dependencies:%.c=%.o)
 product := greetings
 
-$(product): $(dependencies) #Compile everything
-	cc -c $(dependencies)
-	touch $@
+$(product): $(output) #Compile everything
+	cc $(output) -o $@
 
 $(dependencies):
 	touch $@
